@@ -37,6 +37,7 @@ button {
   cursor: pointer;
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
     background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 500;
 }
 
 address {
@@ -109,12 +110,7 @@ a {
   font-size: 26px;
   line-height: calc(31 / 26);
 }
-.section-tittle {
-  margin-bottom: 50px;
-  font-size: 36px;
-  line-height: calc(42 / 36);
-  text-align: center;
-}
+
 /* Navigation */
 .header .container {
   display: flex;
@@ -196,10 +192,10 @@ a {
 .banner p {
   margin-bottom: 12px;
   font-size: 20px;
-  line-height: calc(23 / 20);
   font-weight: 700;
 }
-.form-block {
+
+.modal__item {
   width: 448px;
   margin: 0 auto;
   text-align: start;
@@ -208,25 +204,25 @@ a {
   flex-direction: column;
   position: relative;
 }
-.banner .icons {
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
 .banner .form-input {
   cursor: pointer;
   font: inherit;
-  width: 100%;
+  width: 448px;
   height: 40px;
-  padding-left: 42px;
-  outline: none;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+.banner .form-input:hover,
 .banner .form-input:focus {
   border-color: var(--accent3-color);
 }
+.form-input:hover + .icons,
 .form-input:focus + .icons {
   fill: var(--accent3-color);
+}
+.banner .form-container {
+  margin: 40px 0;
 }
 .banner .comment {
   cursor: pointer;
@@ -234,10 +230,9 @@ a {
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   padding: 12px 16px;
-  width: 100%;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  outline: none;
 }
+.banner .comment:hover,
 .banner .comment:focus {
   border-color: var(--accent3-color);
 }
@@ -248,15 +243,7 @@ a {
   color: var(--accent4-color);
   margin-bottom: 4px;
 }
-.comment-block {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
 .backdrop .agree-block {
-  display: flex;
-  justify-content: center;
   margin-bottom: 30px;
   margin-top: 20px;
 }
@@ -276,6 +263,7 @@ a {
   position: absolute;
   bottom: 11px;
   left: 12px;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .agree-label {
   position: relative;
@@ -324,6 +312,59 @@ a {
   display: flex;
   justify-content: center;
 }
+.banner .backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.banner .modal {
+  min-width: 528px;
+  min-height: 581px;
+  background-color: var(--accent2-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  pointer-events: visible;
+}
+
+.banner .btn {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  background-color: var(--accent2-color);
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  pointer-events: visible;
+}
+
+.banner .btn:hover {
+  fill: var(--accent3-color);
+}
+
+.banner .icon {
+  width: 100%;
+  height: 100%;
+}
 .banner .button {
   text-align: center;
   font-size: 16px;
@@ -340,55 +381,7 @@ a {
 .banner .button:focus {
   background-color: #188ce8;
 }
-.banner .backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.2);
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-  pointer-events: none;
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.backdrop.is-hidden {
-  opacity: 0;
-  pointer-events: none;
-  visibility: hidden;
-}
-.banner .modal {
-  padding: 40px;
-  min-width: 528px;
-  min-height: 581px;
-  background-color: var(--accent2-color);
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-    0px 2px 1px rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
-  position: absolute;
-  top: 50%;
-  right: 50%;
-  transform: translate(50%, -50%);
-  pointer-events: visible;
-}
-.banner .btn {
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 50%;
-  background-color: var(--accent2-color);
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  pointer-events: visible;
-}
-.banner .btn:hover {
-  fill: var(--accent3-color);
-}
-.banner .icon {
-  width: 100%;
-  height: 100%;
-}
+
 
 /* Function  */
 .function {
@@ -544,25 +537,22 @@ a {
 
 /* Footer  */
 .footer {
+  display: flex;
+  justify-content: space-between;
   padding: 60px 0px;
   background-color: #2f303a;
 }
 .footer .container {
   display: flex;
   align-items: baseline;
-  justify-content: space-between;
 }
-.footer .container-block {
-  display: flex;
-  align-items: baseline;
-}
-.footer .logo {
+.footer__logo {
   display: block;
   color: var(--accent2-color);
   font-weight: 700;
   margin-bottom: 20px;
 }
-.footer .connect {
+.connect {
   margin-left: 70px;
 }
 .connect p {
@@ -613,6 +603,9 @@ a {
   cursor: pointer;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+.footer input:hover {
+  border-color: var(--accent3-color);
+}
 .footer .bub {
   position: relative;
   margin-left: 12px;
@@ -631,13 +624,6 @@ a {
   font-weight: 700;
   text-transform: uppercase;
   margin-bottom: 20px;
-}
-.footer input {
-  color: var(--accent2-color);
-  outline: none;
-}
-.footer input:focus {
-  border-color: var(--accent3-color);
 }
 .footer input::placeholder {
   font-size: 16px;
@@ -685,14 +671,6 @@ a {
   gap: 8px;
   display: flex;
   justify-content: center;
-}
-.page-nav .button {
-  line-height: calc(26 / 16);
-  font-size: 16px;
-  font-weight: 500;
-  padding: 6px 22px;
-  background: #f5f4fa;
-  border-radius: 4px;
 }
 /* Portfolio  */
 .portfolio-link {
