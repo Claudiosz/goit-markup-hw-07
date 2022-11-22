@@ -15,7 +15,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css?_cacheOverride=1665331896665"
     />
-    <link href="./sass/main.css" rel="stylesheet" type="text/css" />
+    <link href="./css/main.min.css" rel="stylesheet" />
   </head>
   <body>
     <!-- Шапка -->
@@ -44,10 +44,7 @@
         </nav>
         <ul class="contact">
           <li class="contact__item">
-            <a
-              href="mailto:info@devstudio.com"
-              class="contact__link"
-              lang="en"
+            <a href="mailto:info@devstudio.com" class="contact__link" lang="en"
               ><svg class="contact__icon" width="16px" height="12px">
                 <use href="./images/icons.svg#icon-envelope"></use>
               </svg>
@@ -285,7 +282,7 @@
               <div class="comands__card">
                 <h3 class="comands__name">Ольга Рєпіна</h3>
                 <p class="comands__job text" lang="en">Frontend Developer</p>
-                <ul class="list icon-list">
+                <ul class="icon-list">
                   <li class="icon-list__item">
                     <a class="icon-list__link" href=""
                       ><svg class="icon-list__icon" width="20px" height="20px">
@@ -343,14 +340,22 @@
                   </li>
                   <li class="icon-list__item">
                     <a class="icon-list__link" href=""
-                      ><svg class="icon-list__icon comands__link" width="20px" height="20px">
+                      ><svg
+                        class="icon-list__icon comands__link"
+                        width="20px"
+                        height="20px"
+                      >
                         <use href="./images/icons.svg#icon-facebook"></use>
                       </svg>
                     </a>
                   </li>
                   <li class="icon-list__item">
                     <a class="icon-list__link" href=""
-                      ><svg class="icon-list__icon comands__link" width="20px" height="20px">
+                      ><svg
+                        class="icon-list__icon comands__link"
+                        width="20px"
+                        height="20px"
+                      >
                         <use href="./images/icons.svg#icon-linkedin"></use>
                       </svg>
                     </a>
@@ -367,8 +372,8 @@
               <div class="comands__card">
                 <h3 class="comands__name">Михайло Єрмаков</h3>
                 <p class="comands__job text" lang="en">UI Designer</p>
-                <ul class="list icon-list">
-                  <li class="icon-list__item ">
+                <ul class="icon-list">
+                  <li class="icon-list__item">
                     <a class="icon-list__link" href=""
                       ><svg class="icon-list__icon" width="20px" height="20px">
                         <use href="./images/icons.svg#icon-instagram"></use>
@@ -525,7 +530,13 @@
         <div>
           <p class="subscribe__tittle">Підпишіться на розсилку</p>
           <form class="subscribe">
-            <input class="subscribe__input" type="email" name="email" id="email" placeholder="E-mail" />
+            <input
+              class="subscribe__input"
+              type="email"
+              name="email"
+              id="email"
+              placeholder="E-mail"
+            />
             <button class="subscribe__button" type="submit">
               Підписатися<svg class="subscribe__icons">
                 <use href="./images/icons.svg#icon-send"></use>

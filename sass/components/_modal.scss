@@ -107,6 +107,8 @@
     appearance: none;
 }
 .modal__agree-label {
+    line-height: calc(24/14);
+    color: $text-color;
     position: relative;
 }
 
